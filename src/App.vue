@@ -5,6 +5,7 @@
 
 
     <!-- 中间路由router-view区域 -->
+		<router-view></router-view>
 
 
     <!-- 底部tabber区域 -->
@@ -28,8 +29,6 @@
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
-
-    <h1>app组件</h1>
 
   </div>
 </template>

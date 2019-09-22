@@ -14,7 +14,10 @@ import { Header } from 'mint-ui';
 Vue.component(Header.name,Header);  //Header为mint-ui提供好的组件模板对象
 //按需导icon购物车图标
 import './lib/mui/css/icons-extra.css';
-
+//按需导入mint-ui的轮播图组件
+import { Swipe, SwipeItem } from 'mint-ui';
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
 
 //导入根组件app
 import app from './App.vue';
