@@ -7,7 +7,6 @@
     <!-- 中间路由router-view区域 -->
 
 
-
     <!-- 底部tabber区域 -->
     <nav class="mui-bar mui-bar-tab">
 			<router-link class="mui-tab-item" to="/home">
