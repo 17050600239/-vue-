@@ -5,6 +5,11 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 import router from './router.js';
 
+//导入axios
+import axios from 'axios';
+import VueAxios from 'vue-axios';
+Vue.use(VueAxios,axios);   //注意顺序不能乱
+
 //导入MUI的样式
 import './lib/mui/css/mui.min.css';
 //导入mint-ui全部样式

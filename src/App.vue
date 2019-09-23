@@ -4,8 +4,10 @@
     <mt-header fixed title="黑马程序员"></mt-header>
 
 
-    <!-- 中间路由router-view区域 -->
-		<router-view></router-view>
+    <!-- 中间路由router-view区域,四个tabber组件 -->
+		<transition>
+			<router-view></router-view>
+		</transition>
 
 
     <!-- 底部tabber区域 -->
@@ -39,5 +41,19 @@
 <style lang="scss" scoped>
 .app-container{
   padding-top:40px;
+	overflow-x: hidden;
+}
+.v-enter{
+	opacity: 0;
+	transform: translateX(100%);  //100%适配所有机型
+}
+.v-leave-to{
+	opacity: 0;
+	transform: translateX(-100%);  //100%适配所有机型
+	position: absolute;
+}
+.v-enter-active,
+.v-leave-active{
+	transition: all 0.5s ease;
 }
 </style>
