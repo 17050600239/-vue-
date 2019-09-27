@@ -6,6 +6,8 @@ import ShopcarContainer from './components/tabbar/ShopcarContainer.vue';
 import SearchContainer from './components/tabbar/SearchContainer.vue';
 import NewsList from './components/news/NewsList.vue';
 import NewsInfo from './components/news/NewsInfo.vue';
+import PhotoList from './components/photos/PhotoList.vue';
+import PhotoInfo from './components/photos/PhotoInfo.vue';
 
 //创建路由对象
 var router = new VueRouter({
@@ -17,7 +19,9 @@ var router = new VueRouter({
         {path:'/search',component:SearchContainer},
         {path:'/home/newsList',component:NewsList},
         //用params方式传递参数，获取id即 this.$route.params.id
-        {path:'/home/newsInfo/:id',component:NewsInfo}
+        {path:'/home/newsInfo/:id',component:NewsInfo},
+        {path:'/home/photoList',component:PhotoList},
+        {path:'/home/photoInfo/:id',component:PhotoInfo}
     ],
      //mui-active为mui选中高亮的类，覆盖默认的路由类router-link-active
     linkActiveClass:'mui-active' 

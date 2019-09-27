@@ -10,7 +10,7 @@
        <hr>
         <!-- 内容区域 -->
        <div class="content" v-html="newsinfo.content"></div>
-       <!-- 评论区子组件,在xomment组件用props获取到父组件的id -->
+       <!-- 评论区子组件,在comment组件用props获取到父组件的id -->
        <comment-box :id="this.id"></comment-box>
     </div>
 </template>

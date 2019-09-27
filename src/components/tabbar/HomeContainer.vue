@@ -2,9 +2,6 @@
     <div>
         <!-- 轮播图区域 -->
         <mt-swipe :auto="4000">
-            <!-- <mt-swipe-item>1</mt-swipe-item>
-            <mt-swipe-item>2</mt-swipe-item>
-            <mt-swipe-item>3</mt-swipe-item> -->
             <!-- 图片数据获取成功则v-for循环输出，src需要用:绑定作变量 -->
             <mt-swipe-item v-for="item in swipeList" :key="item.name">
                 <img :src="item.img" alt="图片加载失败"> 
@@ -18,9 +15,9 @@
                     <img src="../../images/menu1.png" alt="图片获取失败">
                     <div class="mui-media-body">新闻资讯</div>
                 </router-link></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><routerLink to="/home/photoList">
                     <img src="../../images/menu2.png" alt="图片获取失败">
-                    <div class="mui-media-body">图片分享</div></a></li>
+                    <div class="mui-media-body">图片分享</div></routerLink></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                     <img src="../../images/menu3.png" alt="图片获取失败">
                     <div class="mui-media-body">商品购买</div></a></li>
