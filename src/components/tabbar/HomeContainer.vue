@@ -1,12 +1,7 @@
 <template>
     <div>
         <!-- 轮播图区域 -->
-        <mt-swipe :auto="4000">
-            <!-- 图片数据获取成功则v-for循环输出，src需要用:绑定作变量 -->
-            <mt-swipe-item v-for="item in swipeList" :key="item.name">
-                <img :src="item.img" alt="图片加载失败"> 
-            </mt-swipe-item>
-        </mt-swipe>
+        <swiper :swipeList = "swipeList" :isfull="true"></swiper>
 
         <!-- 用mui九宫格到六宫格布局 -->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -15,12 +10,16 @@
                     <img src="../../images/menu1.png" alt="图片获取失败">
                     <div class="mui-media-body">新闻资讯</div>
                 </router-link></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><routerLink to="/home/photoList">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <routerLink to="/home/photoList">
                     <img src="../../images/menu2.png" alt="图片获取失败">
-                    <div class="mui-media-body">图片分享</div></routerLink></li>
-            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <div class="mui-media-body">图片分享</div>
+                </routerLink></li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <routerLink to="/home/goodsList">
                     <img src="../../images/menu3.png" alt="图片获取失败">
-                    <div class="mui-media-body">商品购买</div></a></li>
+                    <div class="mui-media-body">商品购买</div>
+                </routerLink></li>
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
                     <img src="../../images/menu4.png" alt="图片获取失败">
                     <div class="mui-media-body">留言反馈</div></a></li>
@@ -38,6 +37,8 @@
 
 <script>
 import { Toast } from "mint-ui";
+//导入轮播图组件
+import swiper from '../subcomponents/swiper.vue';
 export default {
   data() {
     return {
@@ -65,30 +66,14 @@ export default {
           });
         });
     }
+  },
+  components:{
+      swiper  //注册导入的轮播图组件
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.mint-swipe{
-    height: 200px;
-
-    .mint-swipe-item{
-        &:nth-child(1){
-            background-color: red;
-        }
-        &:nth-child(2){
-            background-color: blue;
-        }
-        &:nth-child(3){
-            background-color: cyan;
-        }
-        img{
-            width:100%;
-            height: 100%;
-        }
-    }
-}
 .mui-grid-view.mui-grid-9{   //六宫格ul
     background-color: #fff;
     border: none;

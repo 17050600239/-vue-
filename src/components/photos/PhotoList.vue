@@ -5,7 +5,7 @@
             <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
                 <div class="mui-scroll">
                     <a :class="['mui-control-item', item.id == 0 ? 'mui-active' : '']" href="#item1mobile"
-                       data-wid="tab-top-subpage-1.html" v-for="item in titles" :key="item.id" @click="getPhoto(item.id)">
+                       data-wid="tab-top-subpage-1.html" v-for="item in titles" :key="item.id" @tap="getPhoto(item.id)">
                         {{item.title}}
                     </a>
                 </div>

@@ -7,6 +7,10 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 import router from './router.js';
 
+//导入缩略图插件
+import VuePreview from 'vue-preview';
+Vue.use(VuePreview);
+
 //导入MUI的样式
 import './lib/mui/css/mui.min.css';
 import './lib/mui/css/icons-extra.css';
