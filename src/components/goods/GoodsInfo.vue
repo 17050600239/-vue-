@@ -103,6 +103,15 @@ export default {
         },
         addToShopCar(){  //加入购物车按钮
             this.ballFlag = !this.ballFlag;
+            // {id:商品的id,count:要购买的数量,price:商品的单价,selected:false}
+            var goodsinfo = { //拼接出一个要保存到store中car的数组对象
+                id:this.id,
+                count:this.selectedCount,
+                price:this.goodsinfo.sell_price,
+                selected:true
+            };
+            // 调用addToCar方法,并且传入goodsinfo
+            this.$store.commit("addToCar",goodsinfo);
         },
         //小球加入购物车动画效果
         beforeEnter(el){

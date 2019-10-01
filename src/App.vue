@@ -1,7 +1,12 @@
 <template>
   <div class="app-container">
     <!-- 顶部header区域 -->
-    <mt-header fixed title="黑马程序员"></mt-header>
+    <mt-header fixed title="黑马程序员">
+      <!-- 返回按钮 -->
+      <span slot="left" @click="goBack" v-show="flag">
+        <mt-button icon="back">返回</mt-button>
+      </span>
+    </mt-header>
 
 
     <!-- 中间路由router-view区域,四个tabber组件 -->
@@ -22,7 +27,8 @@
 			</router-link>
 			<router-link class="mui-tab-item-zyj" to="/shopcar">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart">
-          <span class="mui-badge" id="badge">0</span>
+          <!-- 购物车小球徽标 -->
+          <span class="mui-badge" id="badge">{{ $store.getters.getAllCount }}</span>
         </span>
         <span class="mui-tab-label">购物车</span>
 			</router-link>
@@ -35,6 +41,33 @@
 </template>
 
 <script>
+export default {
+  data(){
+    return {
+      flag:false
+    }
+  },
+  created(){
+    this.flag = this.$route.path === '/home' ? false : true ;
+  },
+  methods:{
+    goBack(){
+      //点击后退返回按钮事件
+      this.$router.go(-1); //使用路由的go属性，-1为后退
+    }
+  },
+  watch:{
+    // 监听路由地址是否为 home首页,需要在created中
+    '$route.path':function(newVal){
+      // console.log(newVal);
+      if(newVal === '/home'){
+        this.flag = false;
+      }else{
+        this.flag = true;
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
