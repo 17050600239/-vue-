@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <!-- 顶部header区域 -->
-    <mt-header fixed title="黑马程序员">
+    <mt-header fixed title="黑马程序员-vue实战">
       <!-- 返回按钮 -->
       <span slot="left" @click="goBack" v-show="flag">
         <mt-button icon="back">返回</mt-button>
